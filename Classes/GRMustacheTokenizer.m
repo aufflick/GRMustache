@@ -263,6 +263,17 @@
 				}
 				break;
 				
+			case '%':
+				tag = [[tag substringFromIndex:1] stringByTrimmingCharactersInSet:whitespaceCharacterSet];
+				if (![self shouldContinueAfterParsingToken:[GRMustacheToken tokenWithType:GRMustacheTokenTypePragma
+																				  content:tag
+																		   templateString:templateString
+																					 line:line
+																					range:NSMakeRange(orange.location, crange.location + crange.length - orange.location)]]) {
+					return;
+				}
+				break;
+				
 			default:
 				tag = [tag stringByTrimmingCharactersInSet:whitespaceCharacterSet];
 				if (tag.length == 0) {

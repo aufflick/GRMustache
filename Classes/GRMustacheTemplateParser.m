@@ -26,6 +26,7 @@
 #import "GRMustacheTextElement_private.h"
 #import "GRMustacheVariableElement_private.h"
 #import "GRMustacheSection_private.h"
+#import "GRMustachePragmaElement_private.h"
 #import "GRBoolean.h"
 #import "GRMustacheError.h"
 
@@ -150,6 +151,19 @@
 		case GRMustacheTokenTypeSetDelimiter:
 			// ignore
 			break;
+            
+        case GRMustacheTokenTypePragma: {
+            NSError *pragmaError;
+            id<GRMustacheRenderingElement> element = [GRMustachePragmaElement pragmaElementWithString:token.content error:&pragmaError];
+            if (element) {
+                [currentElements addObject:element];
+            } else {
+                if (![pragmaError.domain isEqualToString:GRMustachePragmaElementErrorDomain]) {
+                    [self finishWithError:pragmaError];
+                    return NO;
+                }
+            }
+        } break;
 			
 		default:
 			NSAssert(NO, @"");

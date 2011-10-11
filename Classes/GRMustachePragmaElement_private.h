@@ -21,32 +21,15 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "GRMustacheRendering_private.h"
 
+extern NSString* const GRMustachePragmaElementErrorDomain;
 
 typedef enum {
-	GRMustacheTokenTypeText,
-	GRMustacheTokenTypeComment,
-	GRMustacheTokenTypeEscapedVariable,
-	GRMustacheTokenTypeUnescapedVariable,
-	GRMustacheTokenTypeSectionOpening,
-	GRMustacheTokenTypeInvertedSectionOpening,
-	GRMustacheTokenTypeSectionClosing,
-	GRMustacheTokenTypePartial,
-	GRMustacheTokenTypeSetDelimiter,
-    GRMustacheTokenTypePragma,
-} GRMustacheTokenType;
+	GRMustachePragmaElementUnsupportedPragmaError,
+} GRMustachePragmaElementErrorCode;
 
-@interface GRMustacheToken : NSObject {
-	GRMustacheTokenType type;
-	NSString *content;
-	NSString *templateString;
-	NSUInteger line;
-	NSRange range;
+@interface GRMustachePragmaElement : NSObject<GRMustacheRenderingElement> {
 }
-@property (nonatomic, readonly) GRMustacheTokenType type;
-@property (nonatomic, readonly, retain) NSString *content;
-@property (nonatomic, readonly, retain) NSString *templateString;
-@property (nonatomic, readonly) NSUInteger line;
-@property (nonatomic, readonly) NSRange range;
-+ (id)tokenWithType:(GRMustacheTokenType)type content:(NSString *)content templateString:(NSString *)templateString line:(NSUInteger)line range:(NSRange)range;
++ (id<GRMustacheRenderingElement>)pragmaElementWithString:(NSString *)string error:(NSError **)outError;
 @end

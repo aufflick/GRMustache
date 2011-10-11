@@ -119,6 +119,8 @@
 		56F5A827143EC5CB00478651 /* inverted.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56F5A819143EC5CB00478651 /* inverted.yml */; };
 		56F5A829143EC5CB00478651 /* partials.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56F5A81B143EC5CB00478651 /* partials.yml */; };
 		56F5A82B143EC5CB00478651 /* sections.yml in Resources */ = {isa = PBXBuildFile; fileRef = 56F5A81D143EC5CB00478651 /* sections.yml */; };
+		56FA32E01444114900B6554F /* GRMustachePragmaElement_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FA32DE1444114900B6554F /* GRMustachePragmaElement_private.h */; };
+		56FA32E11444114A00B6554F /* GRMustachePragmaElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 56FA32DF1444114900B6554F /* GRMustachePragmaElement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +281,8 @@
 		56F5A819143EC5CB00478651 /* inverted.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inverted.yml; sourceTree = "<group>"; };
 		56F5A81B143EC5CB00478651 /* partials.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = partials.yml; sourceTree = "<group>"; };
 		56F5A81D143EC5CB00478651 /* sections.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sections.yml; sourceTree = "<group>"; };
+		56FA32DE1444114900B6554F /* GRMustachePragmaElement_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRMustachePragmaElement_private.h; sourceTree = "<group>"; };
+		56FA32DF1444114900B6554F /* GRMustachePragmaElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRMustachePragmaElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -592,6 +596,8 @@
 				565F696F139FF062004D1894 /* GRMustacheTextElement_private.h */,
 				565F6974139FF062004D1894 /* GRMustacheVariableElement.m */,
 				565F6975139FF062004D1894 /* GRMustacheVariableElement_private.h */,
+				56FA32DF1444114900B6554F /* GRMustachePragmaElement.m */,
+				56FA32DE1444114900B6554F /* GRMustachePragmaElement_private.h */,
 			);
 			name = "Abstract Tree";
 			sourceTree = "<group>";
@@ -696,6 +702,7 @@
 				563BF6CE14403FE1005A4F58 /* GRMustacheNSUndefinedKeyExceptionGuard_private.h in Headers */,
 				563BF72614404BF1005A4F58 /* GRMustacheContextStrategy_private.h in Headers */,
 				5663FC421441779400B60CEA /* GRMustacheAvailabilityMacros.h in Headers */,
+				56FA32E01444114900B6554F /* GRMustachePragmaElement_private.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,6 +847,7 @@
 				563BF6CB14403D06005A4F58 /* GRMustacheProperty.m in Sources */,
 				563BF6CF14403FE1005A4F58 /* GRMustacheNSUndefinedKeyExceptionGuard.m in Sources */,
 				563BF72714404BF1005A4F58 /* GRMustacheContextStrategy.m in Sources */,
+				56FA32E11444114A00B6554F /* GRMustachePragmaElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
